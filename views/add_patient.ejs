@@ -9,7 +9,7 @@
 
   <h1><%= title %></h1>
 
-  <form class="form-horizontal" action="add_patient" enctype="multipart/form-data" method="POST">
+  <form class="form-horizontal" id="submit_form" action="add_patient" enctype="multipart/form-data" method="POST">
     <div class="form-group">
       <label class="control-label col-sm-4" for="first_name">Frist Name:</label>
       <div class="col-sm-5">
@@ -71,9 +71,9 @@
         <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
       </div>
 
-      <label class="control-label col-sm-1" for="pwd">Password:</label>
+      <label class="control-label col-sm-1" for="password">Password:</label>
       <div class="col-sm-2"> 
-        <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
       </div>
     </div>
 
@@ -84,8 +84,16 @@
       <div class="col-sm-2"> 
         <input type="password" class="form-control" id="repeat_password" name="repeat_password" placeholder="Re-enter password">
       </div>
+      
+      <label class="control-label col-sm-1" for="email">Email:</label>
+      <div class="col-sm-2"> 
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+      </div>
+    </div>
 
-      <label class="control-label col-sm-1" for="images">5 Images:</label>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="images">5 Images:</label>
       <div class="control-label col-sm-1">
         <input type="file" name="myImages" multiple id="myImages" class="form-control-file border" onchange="addImages(this.files)"/>
       </div>
@@ -111,7 +119,7 @@
 
     <div class="form-group"> 
       <div class="col-sm-offset-5 col-sm-12">
-        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        <button type="button" class="btn btn-primary btn-lg" id="submit_button">Submit</button>
       </div>
     </div>
 
@@ -121,6 +129,8 @@
   <script src="/javascripts/bootstrap.min.js"></script>
   <script src="/javascripts/bootstrap-datepicker.js"></script>
   <script src="/javascripts/add-patient-js.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 
+  
 </body>
 </html>

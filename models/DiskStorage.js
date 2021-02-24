@@ -1,5 +1,6 @@
 const multer = require('multer');
 const util = require("util");
+const { v1: uuid} = require('uuid');
 
 // SET STORAGE
 let storage = multer.diskStorage({
@@ -7,10 +8,10 @@ let storage = multer.diskStorage({
         cb(null, 'images_patient')
     },
     filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + ".jpeg");
+        cb(null, uuid() + ".jpeg");
     }
 })
 
 let upload = multer({ storage: storage }).array('myImages', 12)
-
-module.exports.upload = util.promisify(upload);
+let upload_files = util.promisify(upload);
+module.exports = upload_files; 

@@ -83,4 +83,8 @@ $(document).ready(function(){
         $("#gender_male").prop('checked', true);
         $("#gender_female").prop('checked', false);
     });
+
+    $("#submit_button").on("click", function(){
+        console.log("Hello");
+    })
 });
